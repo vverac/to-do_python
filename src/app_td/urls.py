@@ -1,6 +1,7 @@
-from django.urls import  path
+from django.urls import path
 from . import views
-
-urlpatterns = [  
-    # path('home/', ),
-]
+ 
+urlpatterns = [
+     path("", views.List_view.as_view(), name="index"),
+     path("list/<int:list_id>/", views.ItemListView.as_view(), name="list"),
+ ]
