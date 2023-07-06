@@ -1,0 +1,18 @@
+{% extends "app_td/base.html" %} {% block content %}
+<!--index.html-->
+{% if object_list %}
+<h3>Mi lista de tareas</h3>
+{% endif %}
+<ul>
+  {% for todolist in object_list %}
+  <li>
+    <div>
+      <a href='{% url "list" todolist.id %}'> {{ todolist.title }} </a>
+    </div>
+  </li>
+  {% empty %}
+  <h4>No has creado listas!</h4>
+  {% endfor %}
+</ul>
+
+{% endblock %}
